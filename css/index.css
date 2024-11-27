@@ -1,0 +1,372 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap");
+
+/* Variabel untuk warna dan elemen */
+:root {
+    --primary-color: #12c2b9;
+    --secondary: #dbfffe;
+    --black: #141414;
+    --white: #fff;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Reset default styling dan font */
+* {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%; /* Menyesuaikan ukuran font agar mudah digunakan di layout */
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width: 1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background: var(--primary-color);
+}
+
+.heading{
+    position: relative;
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading::after{
+    content: url('../gambar/separator.svg');
+    display: block;
+    width: 10rem;
+    margin-inline: auto;
+    margin-top: -1rem;
+}
+section{
+    padding: 5rem 7%;
+}
+
+/* Styling untuk header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    transition: all 0.3s ease;
+}
+
+/* Logo di dalam header */
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img {
+    width: 40px; /* Menyesuaikan ukuran logo gambar */
+    height: 40px;
+    margin-right: 1rem;
+}
+
+/* Menambahkan warna untuk logo */
+.header .logo i {
+    color: var(--primary-color);
+    padding-right: 0.5rem;
+}
+
+/* Navbar links styling */
+.header .navbar a {
+    font-size: 1.2rem;
+    color: var(--black);
+    margin: 0 1rem;
+    padding-block: 1rem;
+}
+
+/* Hover effect untuk navbar link */
+.header .navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* Styling untuk hover-underline efek */
+.header .navbar .hover-underline {
+    position: relative;
+    max-width: max-content;
+}
+
+.header .navbar .hover-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.header .navbar .hover-underline:hover::after {
+    content: '';
+    position: absolute;
+    left:0; bottom: 0;
+    width: 100%;
+    height: .5rem;
+    border-block: .1rem solid var(--primary-color);
+    transform: sccaleX(0.2);
+    opacity: 0;
+    transition: 500ms ease;
+}
+
+.header .navbar .hover-underline:is(:hover, :focus-visible)::after{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.header .icons div{
+    font-size: 2.5rem;
+    margin-left: 1.7rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.header .icons div:hover{
+    color: var(--primary-color);
+}
+
+#menu-btn{
+    display: none;
+}
+
+/* home */
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: url(../gambar/images.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content{
+    max-width: 50rem;
+}
+
+.home .content h3{
+    font-size: 5rem;
+    color: var(--white);
+    line-height: 1.2;
+}
+
+.home .content p{
+    font-size: 1.5rem;
+    line-height: 2;
+    color: var(--white);
+    padding: 1rem 0;
+}
+
+/* about starts */
+
+.about .container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about .container .about-image{
+    position: relative;
+    flex: 1 1 40rem;
+}
+
+.about .container .about-image .img1{
+    width: 100%;
+}
+
+.about .container .about-image .about-image{
+    position: absolute;
+    bottom: -10rem;
+    right: -1rem;
+    width: 25rem;
+    padding-block: 5rem;
+}
+
+.about .container .about-image .about-content{
+    flex: 1 1 50rem;
+    padding-left: 6rem;
+}
+
+.about .container .about-content h3{
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+.about .container .about-content p{
+    font-size: 1.6rem;
+    color: #444;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+/* about ends */
+/* Tombol utama */
+.btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Efek Hover pada tombol */
+.btn:hover {
+    background-color: var(--secondary);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Efek animasi pada tombol saat hover */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background-color: var(--primary-color);
+    transition: width 0.4s, height 0.4s, top 0.4s, left 0.4s;
+    border-radius: 50%;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+/* Mengubah ukuran tombol saat hover */
+.btn:hover::before {
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+}
+
+/* Mengubah warna teks pada hover */
+.btn:hover .text-1,
+.btn:hover .text-2 {
+    color: var(--black);
+}
+
+/* Animasi teks dalam tombol */
+.text-1, .text-2 {
+    position: relative;
+    z-index: 1;
+}
+
+/* Efek text-2 saat hover */
+.text-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.btn:hover .text-2 {
+    opacity: 1;
+    transform: translateX(10px);
+}
+
+/* Efek text-1 saat hover */
+.text-1 {
+    opacity: 1;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.btn:hover .text-1 {
+    opacity: 0;
+    transform: translateX(10px);
+}
+
+
+/* Responsif untuk tampilan lebih kecil */
+@media (max-width: 768px) {
+    .header {
+        padding: 1.5rem 5%; /* Mengurangi padding pada header di perangkat kecil */
+    }
+
+    .header .logo {
+        font-size: 2rem; /* Menurunkan ukuran font logo di perangkat kecil */
+    }
+
+    .header .navbar {
+        display: none; /* Sembunyikan navbar untuk perangkat kecil, akan muncul dengan toggle */
+        position: absolute;
+        top: 6rem; /* Menyesuaikan posisi navbar pada layar kecil */
+        left: 0;
+        right: 0;
+        background: var(--white);
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .header .navbar a {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    /* Menampilkan navbar dengan toggle */
+    .header .icons #menu-btn {
+        display: block; /* Menampilkan icon hamburger */
+    }
+
+    .header.active .navbar {
+        display: flex; /* Menampilkan navbar ketika menu di-click */
+        flex-direction: column;
+    }
+}
+
+/* Menu toggle icon styling */
+.icons #menu-btn {
+    display: none; /* Menyembunyikan toggle button secara default */
+    font-size: 3rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
+/* Styling untuk login icon */
+.icons #loginbtn {
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
